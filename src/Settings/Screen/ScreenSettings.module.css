@@ -1,0 +1,8 @@
+.screen {
+    width: 300px;
+    height: 200px;
+    margin: 20px 25px;
+    box-shadow: 0 0 0 5px dodgerblue;
+    border-radius: 10px;
+    padding: 1px;
+}

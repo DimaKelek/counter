@@ -1,0 +1,8 @@
+.counter {
+    height: 400px;
+    width: 350px;
+    margin: 150px auto;
+    box-shadow: 0 0 0 5px dodgerblue;
+    border-radius: 25px;
+    padding: 10px;
+}

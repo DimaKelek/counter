@@ -1,0 +1,22 @@
+.input_box {
+    display: flex;
+    margin: 50px 10px;
+}
+.label {
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    text-align: center;
+    margin-right: 10px;
+}
+.input {
+    text-align: center;
+    border: 2px solid dodgerblue;
+}
+.input:focus {
+    box-shadow: 0 0 5px dodgerblue;
+}
+.error {
+    background-color: #f06262;
+}

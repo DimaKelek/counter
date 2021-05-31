@@ -4,8 +4,7 @@ import S from "./SettingInput.module.css"
 type SettingInputPropsType = {
     title: string
     value: number
-    setValue: (value: number) => void
-
+    setValue: (newValue: number) => void
     startValue: number
     maxValue: number
 }

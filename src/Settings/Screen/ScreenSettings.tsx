@@ -1,13 +1,7 @@
 import React from "react";
 import S from "./ScreenSettings.module.css"
 import {SettingInput} from "./SettingInput/SettingInput";
-
-type ScreenSettingsPropsType = {
-    startValue: number
-    setStartValue: (value: number) => void
-    maxValue: number
-    setMaxValue: (value: number) => void
-}
+import { ScreenSettingsPropsType } from "./SettingScreenContainer";
 
 export function ScreenSettings(props: ScreenSettingsPropsType) {
     return (
@@ -15,7 +9,7 @@ export function ScreenSettings(props: ScreenSettingsPropsType) {
             <SettingInput
                 title="Max value: "
                 value={props.maxValue}
-                setValue={props.setMaxValue}
+                setValue={props.changeMaxValue}
 
                 startValue={props.startValue}
                 maxValue={props.maxValue}
@@ -23,7 +17,7 @@ export function ScreenSettings(props: ScreenSettingsPropsType) {
             <SettingInput
                 title="Start value: "
                 value={props.startValue}
-                setValue={props.setStartValue}
+                setValue={props.changeStartValue}
 
                 startValue={props.startValue}
                 maxValue={props.maxValue}

@@ -1,14 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import S from "./Counter.module.css"
 import {Header} from "./Header/Header";
-import {Screen} from "./Screen/Screen";
-import {ControlPanel} from "./ControlPanel/ControlPanel";
 import {ControlPanelContainer} from "./ControlPanel/ControlPanelContainer";
 import {ScreenContainer} from "./Screen/ScreenContainer";
 
 type CounterPropsType = {
-    startValue: number
-    maxValue: number
+
 }
 
 export function Counter(props: CounterPropsType) {

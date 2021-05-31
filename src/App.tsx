@@ -30,20 +30,8 @@ function App() {
     return (
         <div className={"main"}>
             <Switch>
-                <Route path="/counter" render={() =>
-                    <Counter
-                        startValue={startValue}
-                        maxValue={maxValue}
-                    />
-                }/>
-                <Route path="/settings" render={() =>
-                    <Settings
-                        startValue={startValue}
-                        maxValue={maxValue}
-                        setStartValue={setStartValue}
-                        setMaxValue={setMaxValue}
-                    />
-                }/>
+                <Route path="/counter" render={() => <Counter />}/>
+                <Route path="/settings" render={() => <Settings/>}/>
                 <Redirect to='/counter'/>
             </Switch>
         </div>

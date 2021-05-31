@@ -2,28 +2,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import S from "./ControlPanel.module.css"
 import {MyButton} from "./MyButton/MyButton";
-
-type ControlPanelPropsType = {
-    counter: number
-    setCounter: (newCounter: number) => void
-
-    startValue: number
-    maxValue: number
-}
+import {ControlPanelPropsType} from "./ControlPanelContainer";
 
 export function ControlPanel(props: ControlPanelPropsType) {
-    const counter = props.counter
+    const counter = props.counterValue
 
     const clickCallback = () => {
-        if(counter < props.maxValue) {
-            props.setCounter(counter + 1)
-        }
+        props.click()
     }
     const resetCallback = () => {
-        props.setCounter(props.startValue)
+        props.reset()
     }
-
-
     return (
         <div className={S.panel}>
             <MyButton

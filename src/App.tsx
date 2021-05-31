@@ -8,7 +8,7 @@ function App() {
     const [startValue, setStartValue] = useState<number>(0)
     const [maxValue, setMaxValue] = useState<number>(1)
 
-    useEffect(()=> {
+   /* useEffect(()=> {
         let startValueString = localStorage.getItem("startValue")
         let maxValueString = localStorage.getItem("maxValue")
         if(startValueString) {
@@ -25,7 +25,7 @@ function App() {
             localStorage.setItem("startValue", JSON.stringify(startValue))
             localStorage.setItem("maxValue", JSON.stringify(maxValue))
         }
-    }, [startValue, maxValue])
+    }, [startValue, maxValue])*/
 
     return (
         <div className={"main"}>

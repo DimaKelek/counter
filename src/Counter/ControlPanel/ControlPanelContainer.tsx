@@ -5,13 +5,15 @@ import {connect} from "react-redux";
 import {ControlPanel} from "./ControlPanel";
 
 
-export type mapStateToPropsType = CounterType
-export type mapDispatchToPropsType = {
+type mapStateToPropsType = CounterType
+type mapDispatchToPropsType = {
     click: () => void
     reset: () => void
     changeStartValue: (newValue: number) => void
     changeMaxValue: (newValue: number) => void
 }
+
+export type ControlPanelPropsType = mapStateToPropsType & mapDispatchToPropsType
 
 const mapStateToProps = (state: CounterStoreType): mapStateToPropsType => {
     return {
@@ -34,7 +36,6 @@ const mapDispatchToProps = (dispatch: (action: CounterActionsType) => void): map
         changeMaxValue: (newValue: number) => {
             dispatch(changeMaxValueAC(newValue))
         },
-
     }
 }
 

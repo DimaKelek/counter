@@ -21,7 +21,7 @@ export const counterReducer = (state = inicialstate, action: CounterActionsType)
         case "CLICK":
             const copyState = {...state}
             if(copyState.counterValue < copyState.maxValue) {
-                copyState.counterValue++
+                ++copyState.counterValue
             }
             return copyState
         case "RESET":

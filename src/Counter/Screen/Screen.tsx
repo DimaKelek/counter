@@ -1,16 +1,12 @@
 import React from "react";
 import S from "./Screen.module.css"
-
-type ScreenPropsType = {
-    counter: number
-    maxValue: number
-}
+import { ScreenPropsType } from "./ScreenContainer";
 
 export function Screen(props: ScreenPropsType) {
-    const style = `${S.value} ${props.counter === props.maxValue ? S.stop : ""}`
+    const style = `${S.value} ${props.counterValue === props.maxValue ? S.stop : ""}`
     return (
         <div className={S.screen}>
-            <div className={style}>{props.counter}</div>
+            <div className={style}>{props.counterValue}</div>
         </div>
     );
 }

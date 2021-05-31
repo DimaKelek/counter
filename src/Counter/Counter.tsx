@@ -9,14 +9,6 @@ type CounterPropsType = {
 }
 
 export function Counter(props: CounterPropsType) {
-    /*const [counter, setCounter] = useState<number>(0)
-    useEffect(() => {
-        let startValueString = localStorage.getItem("startValue")
-        if(startValueString) {
-            let newStartValue = JSON.parse(startValueString)
-            setCounter(newStartValue)
-        }
-    }, [])*/
     return (
         <div className={S.counter}>
             <Header title="Counter"/>

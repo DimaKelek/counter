@@ -9,16 +9,12 @@ type ControlSettingPanelPropsType = {
 }
 
 export function ControlSettingPanel(props: ControlSettingPanelPropsType) {
-    const setCallback = () => {
-
-    }
     const disabled = props.maxValue <= props.startValue || props.maxValue < 0 || props.startValue < 0
     return (
         <div className={S.panel}>
             <NavLink to="/counter">
                 <MyButton
                     title="Set"
-                    onClick={setCallback}
                     disabled={disabled}
                 />
             </NavLink>

@@ -3,7 +3,7 @@ import S from "./MyButton.module.css"
 
 type MyButtonPropsType = {
     title: string
-    onClick: () => void
+    onClick?: () => void
     disabled?: boolean
 }
 

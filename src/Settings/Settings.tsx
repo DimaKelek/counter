@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import S from "./Settings.module.css";
 import {Header} from "../Counter/Header/Header";
 import {ScreenSettings} from "./Screen/ScreenSettings";
-import {ControlSettingPanel} from "./ControlPanel/ControlSettingPanel";
+import {ControlSettingPanel} from "./SettingsPanel/ControlSettingPanel";
 
 type SettingsPropsType = {
     startValue: number

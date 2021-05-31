@@ -44,7 +44,7 @@ function App() {
                         setMaxValue={setMaxValue}
                     />
                 }/>
-                <Route path="/home" render={() => <Redirect to='/counter'/>} />
+                <Redirect to='/counter'/>
             </Switch>
         </div>
     );

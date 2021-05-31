@@ -22,9 +22,7 @@ export function ControlPanel(props: ControlPanelPropsType) {
     const resetCallback = () => {
         props.setCounter(props.startValue)
     }
-    const setCallback = () => {
 
-    }
 
     return (
         <div className={S.panel}>
@@ -39,7 +37,7 @@ export function ControlPanel(props: ControlPanelPropsType) {
                 disabled={counter === props.startValue}
             />
             <NavLink to="/settings">
-                <MyButton title="Set" onClick={setCallback}/>
+                <MyButton title="Set" />
             </NavLink>
 
         </div>

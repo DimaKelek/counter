@@ -39,7 +39,6 @@ export function ControlPanel(props: ControlPanelPropsType) {
             <NavLink to="/settings">
                 <MyButton title="Set" />
             </NavLink>
-
         </div>
     );
 }

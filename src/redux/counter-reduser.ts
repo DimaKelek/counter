@@ -5,13 +5,13 @@ export type CounterActionsType =
     | ReturnType<typeof changeMaxValueAC>
 
 export type CounterType = {
-    counter: number
+    counterValue: number
     startValue: number
     maxValue: number
 }
 
 const inicialstate: CounterType = {
-    counter: 0,
+    counterValue: 0,
     startValue: 0,
     maxValue: 1
 }
@@ -20,12 +20,12 @@ export const counterReducer = (state = inicialstate, action: CounterActionsType)
     switch (action.type) {
         case "CLICK":
             const copyState = {...state}
-            if(copyState.counter < copyState.maxValue) {
-                copyState.counter++
+            if(copyState.counterValue < copyState.maxValue) {
+                copyState.counterValue++
             }
             return copyState
         case "RESET":
-            return {...state, counter: state.startValue}
+            return {...state, counterValue: state.startValue}
         case "CHANGE-START-VALUE":
             return {...state, startValue: action.newValue}
         case "CHANGE-MAX-VALUE":

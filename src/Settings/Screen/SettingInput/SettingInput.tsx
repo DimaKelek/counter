@@ -1,17 +1,21 @@
 import React, {ChangeEvent} from "react";
 import S from "./SettingInput.module.css"
+import {useDispatch} from "react-redux";
+import {changeMaxValueAC, changeStartValueAC} from "../../../redux/counter-reduser";
 
 type SettingInputPropsType = {
     title: string
     value: number
-    setValue: (newValue: number) => void
     startValue: number
     maxValue: number
+    setValue: typeof changeStartValueAC | typeof changeMaxValueAC
 }
 
 export function SettingInput(props: SettingInputPropsType) {
+    const dispatch = useDispatch()
+
     const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-        props.setValue(e.currentTarget.valueAsNumber)
+        dispatch(props.setValue(e.currentTarget.valueAsNumber))
     }
     const style = `${S.input} ${
         props.maxValue <= props.startValue ? S.error :

@@ -1,26 +1,30 @@
 import React from "react";
 import S from "./ScreenSettings.module.css"
 import {SettingInput} from "./SettingInput/SettingInput";
-import { ScreenSettingsPropsType } from "./SettingScreenContainer";
+import {useSelector} from "react-redux";
+import {CounterStoreType} from "../../redux/store";
+import {changeMaxValueAC, changeStartValueAC, CounterType} from "../../redux/counter-reduser";
 
-export function ScreenSettings(props: ScreenSettingsPropsType) {
+export function ScreenSettings() {
+    const counterData = useSelector<CounterStoreType, CounterType>(state => state.counter)
+
     return (
         <div className={S.screen}>
             <SettingInput
                 title="Max value: "
-                value={props.maxValue}
-                setValue={props.changeMaxValue}
+                value={counterData.maxValue}
+                setValue={changeMaxValueAC}
 
-                startValue={props.startValue}
-                maxValue={props.maxValue}
+                startValue={counterData.startValue}
+                maxValue={counterData.maxValue}
             />
             <SettingInput
                 title="Start value: "
-                value={props.startValue}
-                setValue={props.changeStartValue}
+                value={counterData.startValue}
+                setValue={changeStartValueAC}
 
-                startValue={props.startValue}
-                maxValue={props.maxValue}
+                startValue={counterData.startValue}
+                maxValue={counterData.maxValue}
             />
         </div>
     );

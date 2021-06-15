@@ -1,29 +1,30 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import S from "./ControlPanel.module.css"
 import {MyButton} from "./MyButton/MyButton";
-import {ControlPanelPropsType} from "./ControlPanelContainer";
+import {useDispatch, useSelector} from "react-redux";
+import {CounterStoreType} from "../../redux/store";
+import {clickAC, CounterType, resetAC} from "../../redux/counter-reduser";
 
-export function ControlPanel(props: ControlPanelPropsType) {
-    const counter = props.counterValue
+export function ControlPanel() {
+    const counterData = useSelector<CounterStoreType, CounterType>(state => state.counter)
+    const dispatch = useDispatch()
 
-    const clickCallback = () => {
-        props.click()
-    }
-    const resetCallback = () => {
-        props.reset()
-    }
+    const counter = counterData.counterValue
+
+    const clickCallback = () => dispatch(clickAC())
+    const resetCallback = () => dispatch(resetAC())
     return (
         <div className={S.panel}>
             <MyButton
                 title="Click"
                 onClick={clickCallback}
-                disabled={counter === props.maxValue}
+                disabled={counter === counterData.maxValue}
             />
             <MyButton
                 title="Reset"
                 onClick={resetCallback}
-                disabled={counter === props.startValue}
+                disabled={counter === counterData.startValue}
             />
             <NavLink to="/settings">
                 <MyButton title="Set" />

@@ -1,8 +1,8 @@
 import React from "react";
 import S from "./Settings.module.css";
 import {Header} from "../Counter/Header/Header";
-import {ControlSettingsPanelContainer} from "./SettingsPanel/ControlSettingsPanelContainer";
-import {SettingScreenContainer} from "./Screen/SettingScreenContainer";
+import {ControlSettingPanel} from "./SettingsPanel/ControlSettingPanel";
+import {ScreenSettings} from "./Screen/ScreenSettings";
 
 type SettingsPropsType = {
 
@@ -13,8 +13,8 @@ export function Settings(props: SettingsPropsType) {
     return (
         <div className={S.counter}>
             <Header title="Settings"/>
-            <SettingScreenContainer/>
-            <ControlSettingsPanelContainer/>
+            <ScreenSettings/>
+            <ControlSettingPanel/>
         </div>
     );
 }

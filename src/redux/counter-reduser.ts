@@ -1,22 +1,4 @@
-export type CounterActionsType =
-    ReturnType<typeof clickAC>
-    | ReturnType<typeof resetAC>
-    | ReturnType<typeof changeStartValueAC>
-    | ReturnType<typeof changeMaxValueAC>
-
-export type CounterType = {
-    counterValue: number
-    startValue: number
-    maxValue: number
-}
-
-const inicialstate: CounterType = {
-    counterValue: 0,
-    startValue: 0,
-    maxValue: 1
-}
-
-export const counterReducer = (state = inicialstate, action: CounterActionsType): CounterType => {
+export const counterReducer = (state: initialStateType = inicialstate, action: CounterActionsType): initialStateType => {
     switch (action.type) {
         case "CLICK":
             const copyState = {...state}
@@ -30,20 +12,25 @@ export const counterReducer = (state = inicialstate, action: CounterActionsType)
             return {...state, startValue: action.newValue}
         case "CHANGE-MAX-VALUE":
             return {...state, maxValue: action.newValue}
-        default:
-            return state
+        default: return state
     }
 }
 
-export const clickAC = () => {
-    return {type: "CLICK"} as const
-}
-export const resetAC = () => {
-    return {type: "RESET"} as const
-}
-export  const changeStartValueAC = (newValue: number) => {
-    return {type: "CHANGE-START-VALUE", newValue} as const
-}
-export  const changeMaxValueAC = (newValue: number) => {
-    return {type: "CHANGE-MAX-VALUE", newValue} as const
+export const clickAC = () => ({type: "CLICK"} as const)
+export const resetAC = () => ({type: "RESET"} as const)
+export  const changeStartValueAC = (newValue: number) => ({type: "CHANGE-START-VALUE", newValue} as const)
+export  const changeMaxValueAC = (newValue: number) => ({type: "CHANGE-MAX-VALUE", newValue} as const)
+
+export type CounterActionsType =
+    ReturnType<typeof clickAC>
+    | ReturnType<typeof resetAC>
+    | ReturnType<typeof changeStartValueAC>
+    | ReturnType<typeof changeMaxValueAC>
+
+export type initialStateType = typeof inicialstate
+
+const inicialstate = {
+    counterValue: 0,
+    startValue: 0,
+    maxValue: 1
 }

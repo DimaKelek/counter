@@ -3,11 +3,11 @@ import {NavLink} from "react-router-dom";
 import {MyButton} from "../../Counter/ControlPanel/MyButton/MyButton";
 import S from "./ControlSettingPanel.module.css"
 import {useDispatch, useSelector} from "react-redux";
-import {CounterType, resetAC} from "../../redux/counter-reduser";
+import {initialStateType, resetAC} from "../../redux/counter-reduser";
 import {CounterStoreType} from "../../redux/store";
 
 export function ControlSettingPanel() {
-    const counterData = useSelector<CounterStoreType, CounterType>(state => state.counter)
+    const counterData = useSelector<CounterStoreType, initialStateType>(state => state.counter)
     const dispatch = useDispatch()
 
     const disabled = counterData.maxValue <= counterData.startValue

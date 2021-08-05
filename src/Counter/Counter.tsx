@@ -8,7 +8,7 @@ type CounterPropsType = {
 
 }
 
-export function Counter(props: CounterPropsType) {
+export const Counter: React.FC<CounterPropsType> = props => {
     return (
         <div className={S.counter}>
             <Header title="Counter"/>

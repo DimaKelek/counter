@@ -4,10 +4,10 @@ import S from "./ControlPanel.module.css"
 import {MyButton} from "./MyButton/MyButton";
 import {useDispatch, useSelector} from "react-redux";
 import {CounterStoreType} from "../../redux/store";
-import {clickAC, CounterType, resetAC} from "../../redux/counter-reduser";
+import {clickAC, initialStateType, resetAC} from "../../redux/counter-reduser";
 
 export function ControlPanel() {
-    const counterData = useSelector<CounterStoreType, CounterType>(state => state.counter)
+    const counterData = useSelector<CounterStoreType, initialStateType>(state => state.counter)
     const dispatch = useDispatch()
 
     const counter = counterData.counterValue

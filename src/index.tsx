@@ -4,14 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import {Provider} from "react-redux";
-import {store} from './redux/store';
+import {StoreProvider} from "./mobX/useMobXStore";
+import { Provider } from 'mobx-react';
+
 
 ReactDOM.render(
     <BrowserRouter>
-        <Provider store={store}>
+        <StoreProvider>
             <App/>
-        </Provider>
+        </StoreProvider>
     </BrowserRouter>, document.getElementById('root')
 );
 

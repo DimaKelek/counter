@@ -7,7 +7,7 @@ const storeContext = createContext<StoreWithMobXType | null>(null)
 export const useMobXStore = () => {
     const store = useContext(storeContext)
     if (!store) {
-        throw new Error('useStore must be used within a StoreProvider.')
+        throw new Error('useMobXStore must be used within a StoreProvider.')
     }
     return store
 }
